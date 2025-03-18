@@ -56,8 +56,23 @@ function onFourthBallClick(maxDiameter1, maxDiameter2) {
 }
 
 function onFifthBallClick() {
-    var elBody = document.querySelector('body')
+    const elBody = document.querySelector('body')
     var randColor = getRandomColor()
 
     elBody.style.backgroundColor = randColor
+}
+
+function onSixthBallClick() {
+    const elBall2 = document.querySelector('.sec-ball')
+    const elBall1 = document.querySelector('.first-ball')
+
+    elBall1.style.width = 100 + 'px'
+    elBall1.style.height = 100 + 'px'
+    elBall1.innerText = 100
+    elBall1.style.backgroundColor = 'rgb(49, 99, 83)'
+
+    elBall2.style.width = 100 + 'px'
+    elBall2.style.height = 100 + 'px'
+    elBall2.innerText = 100
+    elBall2.style.backgroundColor = 'rgb(122, 84, 157)'
 }
