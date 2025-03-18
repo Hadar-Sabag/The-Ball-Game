@@ -54,3 +54,10 @@ function onFourthBallClick(maxDiameter1, maxDiameter2) {
     elBall2.style.height = maxDiameter2 + 'px'
     elBall2.innerText = maxDiameter2
 }
+
+function onFifthBallClick() {
+    var elBody = document.querySelector('body')
+    var randColor = getRandomColor()
+
+    elBody.style.backgroundColor = randColor
+}
