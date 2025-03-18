@@ -2,6 +2,8 @@
 
 var gBallSize = 100
 var gMoves = 0
+var gTimer = 0
+var timerInterval
 
 function onBallClick(maxDiameter, selector) {
     const elBall = document.querySelector(selector)
@@ -20,6 +22,10 @@ function onBallClick(maxDiameter, selector) {
 
     gMoves++
     setcountMoves()
+
+    if (!timerInterval) {
+        startTimer()
+    }
 }
 
 function onThirdBallClick() {
@@ -37,6 +43,10 @@ function onThirdBallClick() {
 
     gMoves++
     setcountMoves()
+
+    if (!timerInterval) {
+        startTimer()
+    }
 }
 
 function onFourthBallClick(maxDiameter1, maxDiameter2) {
@@ -63,6 +73,10 @@ function onFourthBallClick(maxDiameter1, maxDiameter2) {
 
     gMoves++
     setcountMoves()
+
+    if (!timerInterval) {
+        startTimer()
+    }
 }
 
 function onFifthBallClick() {
@@ -73,6 +87,10 @@ function onFifthBallClick() {
 
     gMoves++
     setcountMoves()
+
+    if (!timerInterval) {
+        startTimer()
+    }
 }
 
 function onSixthBallClick() {
@@ -90,13 +108,29 @@ function onSixthBallClick() {
     elBall2.style.backgroundColor = 'rgb(122, 84, 157)'
 
     document.querySelector('body').style.backgroundColor = 'black'
-    document.querySelector('.count').innerText = 0
+    gMoves = 0
+    document.querySelector('.count').innerText = gMoves
 
-
+    stopTimer()
+    document.querySelector('.timer').innerText = '000'
 }
 
 function setcountMoves() {
     var elcount = document.querySelector('.count')
     elcount.innerText = gMoves
+}
+
+function startTimer() {
+    timerInterval = setInterval(function () {
+        gTimer++
+        var formattedTime = String(gTimer).padStart(3, '0')
+
+        document.querySelector('.timer').innerText = formattedTime
+    }, 1000)
+}
+
+function stopTimer() {
+    clearInterval(timerInterval)
+    timerInterval = null
 }
 
