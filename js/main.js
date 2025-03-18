@@ -3,7 +3,7 @@
 var gBallSize = 100
 
 function onBallClick() {
-    const elBall = document.querySelector('.ball')
+    const elBall = document.querySelector('.first-ball')
     const randSize = getRandomInt(20, 60)
     const randColor = getRandomColor()
     gBallSize += randSize
