@@ -1,6 +1,7 @@
 'use strict'
 
 var gBallSize = 100
+var gMoves = 0
 
 function onBallClick(maxDiameter, selector) {
     const elBall = document.querySelector(selector)
@@ -16,6 +17,9 @@ function onBallClick(maxDiameter, selector) {
 
     elBall.innerText = gBallSize
     elBall.style.backgroundColor = randColor
+
+    gMoves++
+    setcountMoves()
 }
 
 function onThirdBallClick() {
@@ -30,6 +34,9 @@ function onThirdBallClick() {
     var tempColor = elBall1.style.backgroundColor
     elBall1.style.backgroundColor = elBall2.style.backgroundColor
     elBall2.style.backgroundColor = tempColor
+
+    gMoves++
+    setcountMoves()
 }
 
 function onFourthBallClick(maxDiameter1, maxDiameter2) {
@@ -53,6 +60,9 @@ function onFourthBallClick(maxDiameter1, maxDiameter2) {
     elBall2.style.width = maxDiameter2 + 'px'
     elBall2.style.height = maxDiameter2 + 'px'
     elBall2.innerText = maxDiameter2
+
+    gMoves++
+    setcountMoves()
 }
 
 function onFifthBallClick() {
@@ -60,6 +70,9 @@ function onFifthBallClick() {
     var randColor = getRandomColor()
 
     elBody.style.backgroundColor = randColor
+
+    gMoves++
+    setcountMoves()
 }
 
 function onSixthBallClick() {
@@ -75,4 +88,15 @@ function onSixthBallClick() {
     elBall2.style.height = 100 + 'px'
     elBall2.innerText = 100
     elBall2.style.backgroundColor = 'rgb(122, 84, 157)'
+
+    document.querySelector('body').style.backgroundColor = 'black'
+    document.querySelector('.count').innerText = 0
+
+
 }
+
+function setcountMoves() {
+    var elcount = document.querySelector('.count')
+    elcount.innerText = gMoves
+}
+

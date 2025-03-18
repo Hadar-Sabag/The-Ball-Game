@@ -7,7 +7,8 @@ body {
     text-align: center;
 }
 
-h1 {
+h1,
+h2 {
     color: white;
 }
 
@@ -47,4 +48,8 @@ h1 {
 
 .sixth-ball {
     background-color: rgb(62, 59, 59);
+}
+
+.sixth-ball:hover {
+    background-color: rgb(165, 237, 12);
 }
