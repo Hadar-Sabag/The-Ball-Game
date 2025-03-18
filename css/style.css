@@ -19,6 +19,8 @@ h1,
     background-color: rgb(49, 99, 83);
     margin-inline: auto;
     cursor: pointer;
+    font-size: 22px;
+    font-weight: bold;
 
     display: grid;
     place-items: center;
